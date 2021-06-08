@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+{% block title %}Create an Account{% endblock %}
+{% load crispy_forms_tags %}
+
+
+
+{% block content %}
+<div class="row">
+<div class="col-md-6 offset-md-2">
+
+{% if errors %}
+
+	<h2>{{ errors }} </h2>
+
+
+{% endif %}
+    <form method="POST" class="form-group">
+	{% csrf_token %}
+	{{ form|crispy }}
+	<button type="submit" class="btn btn-success">Register</button>
+    </form>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block 'title' %}{% endblock %}</title>
+    <link href="{% static 'dash/bootstrap/bootstrap-4.5.2-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+      <link href="{% static 'dash/bootstrap/bootstrap-4.5.2-dist/js/bootstrap.min.js' %}" rel="stylesheet">
+
+      <link href="{% static 'dash/styles.css' %}" rel="stylesheet">
+      
+
+    {% block 'head' %}
+
+
+<style>
+
+.menu {  background-color: black; }
+
+.container-custom { background: #f6f6f6; }
+</style>
+
+
+
+    {% endblock %}
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!--   <a class="navbar-brand" href="#">Navbar</a>
+ -->  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" 
+ aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <a class="navbar-brand" style="color: white; background-color:rgb(192, 49, 26); border-radius:25px; padding:5px;" href="#">Test</a> <span style="color:white;"> Application</span>
+
+
+
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Dashboard <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/accounts/register/">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/accounts/logout/">Sign Out</a>
+      </li>
+     <!--  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> -->
+    </ul>
+  </div>
+</nav>
+
+
+<!-- NavBar END -->
+
+
+<!-- Bootstrap row -->
+    <!-- sidebar-container END -->
+
+    <!-- MAIN -->
+  <div class="row">
+
+    <div class="col-md-2">
+
+    </div>
+
+     <div class="col-md-10 main-content">
+             {% block content %}
+            if you see this, something is wrong!
+        {% endblock content %}
+    </div>
+    <!-- Main Col END -->
+</div>
+
+</div>
+<!-- body-row END -->
+</body>
+<script>
+ 
+</script>
+{% block 'after-body' %}
+{% endblock %}
+</html>
